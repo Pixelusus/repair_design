@@ -27,6 +27,7 @@
         z-index: 102;
         @media (max-width: $breakpoint768) {
             display: block;
+            border-color: rgba(255, 255, 255, 0.3);
         }
         span {
             width: 18px;
