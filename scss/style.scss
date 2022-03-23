@@ -1,0 +1,12 @@
+@import "fonts";
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "global";
+
+@import "blocks/header";
+@import "blocks/footer";
+
+@import "mainPage/intro";
+@import "mainPage/portfolio";
+@import "mainPage/contacts";

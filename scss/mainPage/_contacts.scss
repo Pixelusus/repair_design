@@ -1,0 +1,70 @@
+.contacts {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__col {
+        width: calc(33.33333% - 30px);
+        @media (max-width: $breakpoint768) {
+            width: 50%;
+        }
+        &:last-child {
+            @media (max-width: $breakpoint768) {
+                padding-top: 48px;
+                width: 100%;
+            }
+        }
+    }
+    &__item {
+        font-size: 13px;
+        line-height: 24px;
+        margin-bottom: 48px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &-name {
+            font-family: "GilroyExtraBold", sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 8px;
+        }
+    }
+    &__form {
+        &-name {
+            font-family: "GilroyExtraBold", sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 25px;
+        }
+        &-item {
+            margin-bottom: 30px;
+            position: relative;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &-terms {
+            font-size: 9px;
+            line-height: 12px;
+            color: $colorGrey;
+            margin-bottom: 33px;
+            a {
+                color: $colorMain;
+                border-bottom: 1px dotted $colorMain;
+                &:hover {
+                    color: #c6876d;
+                    border-color: #c6876d;
+                }
+            }
+        }
+    }
+    &__buttonWrap {
+        @media (max-width: $breakpoint768) {
+            text-align: center;
+        }
+    }
+    &__button {
+        width: 240px;
+    }
+}

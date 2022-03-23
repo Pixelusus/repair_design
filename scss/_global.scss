@@ -1,0 +1,377 @@
+body {
+    background: $colorWhite;
+    color: $colorMain;
+    font-family: $font-family-main;
+    font-size: $font-size-main;
+    font-weight: 400;
+    line-height: 20px;
+    &.state-lock {
+        overflow: hidden;
+    }
+}
+
+.container {
+    max-width: $containerWidth;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: $containerPadding;
+    @media (max-width: $breakpoint992) {
+        max-width: 970px;
+    }
+    @media (max-width: $breakpoint768) {
+        max-width: 750px;
+    }
+    @media (max-width: $breakpoint480) {
+        max-width: none;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "GilroyExtraBold", sans-serif;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 72px;
+    margin-bottom: 48px;
+    @media (max-width: $breakpoint768) {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .stroke {
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 1px $colorMain;
+    }
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 48px;
+    @media (max-width: $breakpoint768) {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+    .stroke {
+        display: inline-block;
+        color: transparent;
+        -webkit-text-stroke: 1px $colorMain;
+    }
+}
+
+strong {
+    font-family: "GilroyExtraBold", sans-serif;
+}
+
+a {
+    color: $colorMain;
+    text-decoration: none;
+    transition: color .2s linear;
+    &:hover {
+        color: $colorBurningSand;
+    }
+}
+
+.fluid-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input:focus {
+    outline: none;
+}
+
+.form-label {
+    display: block;
+    font-size: 9px;
+    line-height: 12px;
+}
+
+.form-control {
+    display: block;
+    font-family: $font-family-main;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $colorMain;
+    width: 100%;
+    padding: 1px 0;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-width: 0 0 1px 0;
+    border-color: #ebebeb;
+    border-style: solid;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:focus {
+        border-color: $colorMain;
+    }
+    &.is-invalid {
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 9 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M5.12652 4.06586L8.13173 1.06066L7.07107 0L4.06586 3.0052L1.06066 0L0 1.06066L3.0052 4.06586L0 7.07107L1.06066 8.13173L4.06586 5.12652L7.07107 8.13173L8.13173 7.07107L5.12652 4.06586Z' fill='%23DA2128'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center right;
+        color: #da2128;
+        border-color: #da2128;
+    }
+    &.is-valid {
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.5303 1.26574L3 9.79607L0.469666 7.26574L1.53033 6.20508L3 7.67475L10.4697 0.205078L11.5303 1.26574Z' fill='%2378A873'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center right;
+        color: #78a873;
+        border-color: #78a873;
+    }
+}
+
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: 8.5px;
+    font-size: 9px;
+    line-height: 12px;
+    color: #da2128;
+}
+
+.is-invalid~.invalid-feedback {
+    display: block;
+}
+
+.form-upload {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.6088 1.94152C13.0709 0.479453 15.4414 0.479453 16.9034 1.94152C18.3655 3.40359 18.3655 5.77408 16.9034 7.23615L16.4801 7.65954C16.1872 7.95244 15.7123 7.95244 15.4194 7.65954C15.1265 7.36665 15.1265 6.89178 15.4194 6.59888L15.8428 6.17549C16.7191 5.2992 16.7191 3.87847 15.8428 3.00218C14.9665 2.1259 13.5458 2.1259 12.6695 3.00218L5.47174 10.1999C5.06313 10.6085 5.06313 11.271 5.47174 11.6796C5.88035 12.0883 6.54285 12.0883 6.95146 11.6796L12.4556 6.17549C12.7485 5.8826 13.2234 5.8826 13.5163 6.17549C13.8092 6.46838 13.8092 6.94325 13.5163 7.23615L8.01212 12.7403C7.01772 13.7347 5.40548 13.7347 4.41108 12.7403C3.41668 11.7459 3.41668 10.1337 4.41108 9.13926L11.6088 1.94152ZM8.85891 2.36492C9.15181 2.65781 9.15181 3.13269 8.85891 3.42558L2.50797 9.77653C1.16401 11.1205 1.16401 13.2995 2.50797 14.6434C3.85192 15.9874 6.0309 15.9874 7.37486 14.6434L13.7258 8.29247C14.0187 7.99958 14.4936 7.99958 14.7865 8.29247C15.0794 8.58536 15.0794 9.06024 14.7865 9.35313L8.43552 15.7041C6.50577 17.6338 3.37705 17.6338 1.44731 15.7041C-0.482435 13.7743 -0.482436 10.6456 1.44731 8.71587L7.79825 2.36492C8.09115 2.07203 8.56602 2.07203 8.85891 2.36492Z' fill='%23909090'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    color: $colorGrey;
+}
+::-moz-placeholder {
+    color: $colorGrey;
+}
+:-ms-input-placeholder {
+    color: $colorGrey;
+}
+:-moz-placeholder {
+    color: $colorGrey;
+}
+
+
+.button {
+    display: inline-block;
+    font-family: "GilroyExtraBold", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: $colorWhite;
+    border: 1px solid rgba(34, 34, 34, 0.3);
+    box-sizing: border-box;
+    text-align: center;
+    padding: 9px 20px;
+    position: relative;
+    cursor: pointer;
+    &::before {
+        content: "";
+        background-color: $colorMain;
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 1px;
+    }
+    &__box {
+        display: block;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        transform: translateX(13px);
+        transition: transform ease-in-out .2s;
+        transition-delay: .9s;
+        span {
+            position: absolute;
+            display: block;
+            background-color: $colorMain;
+            transition: transform ease-in-out .2s;
+            &:nth-child(1) {
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 50%;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition-delay: 0;
+            }
+            &:nth-child(2) {
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition-delay: .2s;
+            }
+            &:nth-child(3) {
+                top: 0;
+                right: 0;
+                width: 1px;
+                height: 100%;
+                transform: scaleY(0);
+                transform-origin: bottom;
+                transition-delay: .4s;
+            }
+            &:nth-child(4) {
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 1px;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition-delay: .6s;
+            }
+            &:nth-child(5) {
+                bottom: 0;
+                left: 0;
+                width: 1px;
+                height: 50%;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition-delay: .8s;
+            }
+        }
+    }
+    &:hover {
+        color: $colorMain;
+        .button__box {
+            transform: translateX(0);
+            transition-property: transform;
+            span {
+                &:nth-child(1) {
+                    transform: scaleY(1);
+                    transform-origin: bottom;
+                }
+                &:nth-child(2) {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+                &:nth-child(3) {
+                    transform: scaleY(1);
+                    transform-origin: top;
+                }
+                &:nth-child(4) {
+                    transform: scaleX(1);
+                    transform-origin: right;
+                }
+                &:nth-child(5) {
+                    transform: scaleY(1);
+                    transform-origin: bottom;
+                }
+            }
+        }
+    }
+    &:active {
+        color: rgba(34, 34, 34, 0.7);
+        &::before {
+            background-color: rgba(34, 34, 34, 0.7);
+        }
+        .button__box {
+            span {
+                background-color: rgba(34, 34, 34, 0.7);
+            }
+        }
+    }
+    &__rounded {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(34, 34, 34, 0.3);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        svg {
+            width: 15px;
+            height: 7px;
+        }
+        &.__white {
+            border-color: rgba(255, 255, 255, 0.3);
+            svg {
+                path {
+                    fill: $colorWhite;
+                }
+            }
+        }
+        &.__down {
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.section {
+    padding-bottom: 136px;
+    @media (max-width: $breakpoint992) {
+        padding-bottom: 100px;
+    }
+    @media (max-width: $breakpoint768) {
+        padding-bottom: 60px;
+    }
+    &:nth-child(2) {
+        padding-top: 136px;
+        @media (max-width: $breakpoint992) {
+            padding-top: 100px;
+        }
+        @media (max-width: $breakpoint768) {
+            padding-top: 60px;
+        }
+    }
+    &__title {
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: $colorMain;
+            left: -80px;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            margin-top: -2px;
+            @media (max-width: $breakpoint992) {
+                display: none;
+            }
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    &__item {
+        background: $colorMain;
+        border-radius: 2px;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
